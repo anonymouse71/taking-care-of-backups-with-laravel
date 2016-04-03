@@ -1,0 +1,10 @@
+.env
+.idea
+
+# BACK END
+/vendor
+/storage/database.sqlite
+
+# FRONT END
+/public/build
+
