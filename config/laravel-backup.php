@@ -19,7 +19,7 @@ return [
                  * specify individual files as well.
                  */
                 'include' => [
-                    base_path('public/robots.txt'),
+                    base_path('app'),
                 ],
 
                 /*
@@ -27,9 +27,8 @@ return [
                  * You can specify individual files as well.
                  */
                 'exclude' => [
-                    //base_path('vendor'),
-                    //base_path('node_modules'),
-                    //storage_path(),
+                    base_path('vendor'),
+                    base_path('node_modules'),
                 ],
             ],
 
@@ -49,8 +48,8 @@ return [
              */
             'disks' => [
                 'local-backups',
-                'dropbox',
-                's3',
+                //'s3',
+                //'dropbox',
             ],
         ],
     ],
@@ -93,7 +92,7 @@ return [
              * After cleaning up the backups remove the oldest backup until
              * this amount of megabytes has been reached.
              */
-            'deleteOldestBackupsWhenUsingMoreMegabytesThan' => 5
+            'deleteOldestBackupsWhenUsingMoreMegabytesThan' => 0.03
         ]
     ],
 
@@ -108,11 +107,11 @@ return [
             'name' => env('APP_URL'),
             'disks' => [
                 'local-backups',
-                'dropbox',
-                's3',
+                //'s3',
+                //'dropbox',
             ],
             'newestBackupsShouldNotBeOlderThanDays' => 1,
-            'storageUsedMayNotBeHigherThanMegabytes' => 5,
+            'storageUsedMayNotBeHigherThanMegabytes' => 0.03,
         ],
 
         /*
@@ -139,7 +138,7 @@ return [
          * Slack requires the installation of the maknz/slack package.
          */
         'events' => [
-            'whenBackupWasSuccessful'     => ['log'],
+            'whenBackupWasSuccessful'     => ['log', 'slack'],
             'whenCleanupWasSuccessful'    => ['log'],
             'whenHealthyBackupWasFound'   => ['log'],
             'whenBackupHasFailed'         => ['log', 'mail', 'slack'],
@@ -159,9 +158,9 @@ return [
          * Here you can specify how messages should be sent to Slack.
          */
         'slack' => [
-            'channel'  => '#backups',
+            'channel'  => '#backup-demo',
             'username' => 'Backup bot',
-            'icon'     => ':robot:',
+            'icon'     => '',
         ],
 
         /*
