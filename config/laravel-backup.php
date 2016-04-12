@@ -138,7 +138,7 @@ return [
          * Slack requires the installation of the maknz/slack package.
          */
         'events' => [
-            'whenBackupWasSuccessful'     => ['log', 'slack'],
+            'whenBackupWasSuccessful'     => ['log'],
             'whenCleanupWasSuccessful'    => ['log'],
             'whenHealthyBackupWasFound'   => ['log'],
             'whenBackupHasFailed'         => ['log', 'mail', 'slack'],
@@ -150,8 +150,8 @@ return [
          * Here you can specify how emails should be sent.
          */
         'mail' => [
-            'from' => 'your@email.com',
-            'to'   => 'your@email.com',
+            'from' => 'freek@spatie.be',
+            'to'   => 'freek@spatie.be',
         ],
 
         /*
