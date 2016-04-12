@@ -14,7 +14,7 @@ class DropboxFilesystemServiceProvider extends ServiceProvider {
         {
             $client = new DropboxClient(config('dropbox.access_token'), config('dropbox.client_identifier'));
 
-            return new Filesystem(new DropboxAdapter($client), $config);
+            return new Filesystem(new DropboxAdapter($client));
         });
     }
 
