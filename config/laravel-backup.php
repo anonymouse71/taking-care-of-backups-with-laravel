@@ -48,7 +48,7 @@ return [
              */
             'disks' => [
                 'local-backups',
-                's3',
+                //'s3',
                 //'dropbox',
             ],
         ],
@@ -107,7 +107,7 @@ return [
             'name' => env('APP_URL'),
             'disks' => [
                 'local-backups',
-                's3',
+                //'s3',
                 //'dropbox',
             ],
             'newestBackupsShouldNotBeOlderThanDays' => 1,
