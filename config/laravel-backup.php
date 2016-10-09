@@ -8,7 +8,7 @@ return [
          * The name of this application. You can use this name to monitor
          * the backups.
          */
-        'name' => env('APP_URL'),
+        'name' => 'mysite.com',
 
         'source' => [
 
@@ -18,7 +18,7 @@ return [
                  * The list of directories and files that will be included in the backup.
                  */
                 'include' => [
-                    base_path(),
+                    app_path(),
                 ],
 
                 /*
@@ -52,7 +52,8 @@ return [
              * The disk names on which the backups will be stored.
              */
             'disks' => [
-                'local',
+                'backups',
+            //    's3',
             ],
         ],
     ],
@@ -83,11 +84,11 @@ return [
         'notifiable' => \Spatie\Backup\Notifications\Notifiable::class,
 
         'mail' => [
-            'to' => 'your@email.com',
+            'to' => 'freek@spatie.be',
         ],
 
         'slack' => [
-            'webhook_url' => '',
+            'webhook_url' => env('SLACK_WEBHOOK_URL'),
         ],
     ],
 
@@ -98,10 +99,13 @@ return [
      */
     'monitorBackups' => [
         [
-            'name' => env('APP_URL'),
-            'disks' => ['local'],
+            'name' => 'mysite.com',
+            'disks' => [
+                'backups',
+            //    's3',
+            ],
             'newestBackupsShouldNotBeOlderThanDays' => 1,
-            'storageUsedMayNotBeHigherThanMegabytes' => 5000,
+            'storageUsedMayNotBeHigherThanMegabytes' => 0.03,
         ],
 
         /*
@@ -158,7 +162,7 @@ return [
              * After cleaning up the backups remove the oldest backup until
              * this amount of megabytes has been reached.
              */
-            'deleteOldestBackupsWhenUsingMoreMegabytesThan' => 5000,
+            'deleteOldestBackupsWhenUsingMoreMegabytesThan' => 0.03,
         ],
     ],
 ];
