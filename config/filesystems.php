@@ -43,22 +43,23 @@ return [
 
     'disks' => [
 
-        'local-backups' => [
+        'local' => [
             'driver' => 'local',
-            'root' => storage_path('app/backups'),
+            'root' => storage_path('app'),
+        ],
+
+        'public' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public'),
+            'visibility' => 'public',
         ],
 
         's3' => [
             'driver' => 's3',
-            'key'    => env('S3_KEY'),
-            'secret' => env('S3_SECRET'),
-            'region' => env('S3_REGION'),
-            'bucket' => 'backupdemo',
-        ],
-
-        'dropbox' => [
-            'driver' => 'dropbox',
-            'root' => 'backups',
+            'key' => 'your-key',
+            'secret' => 'your-secret',
+            'region' => 'your-region',
+            'bucket' => 'your-bucket',
         ],
 
     ],
