@@ -3,6 +3,7 @@
 
 # BACK END
 /vendor
+/storage/backups
 /storage/database.sqlite
 
 # FRONT END

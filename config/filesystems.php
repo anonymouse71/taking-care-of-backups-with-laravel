@@ -43,20 +43,9 @@ return [
 
     'disks' => [
 
-        'local' => [
-            'driver' => 'local',
-            'root' => storage_path('app'),
-        ],
-
         'backups' => [
             'driver' => 'local',
-            'root' => storage_path('app/backups'),
-        ],
-
-        'public' => [
-            'driver' => 'local',
-            'root' => storage_path('app/public'),
-            'visibility' => 'public',
+            'root' => storage_path('backups'),
         ],
 
         's3' => [
@@ -67,6 +56,16 @@ return [
             'bucket' => env('S3_BUCKET'),
         ],
 
+        'local' => [
+            'driver' => 'local',
+            'root' => storage_path('app'),
+        ],
+
+        'public' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public'),
+            'visibility' => 'public',
+        ],
     ],
 
 ];
