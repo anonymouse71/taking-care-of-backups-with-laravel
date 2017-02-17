@@ -1447,16 +1447,16 @@
         },
         {
             "name": "spatie/laravel-backup",
-            "version": "4.6.3",
+            "version": "4.6.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-backup.git",
-                "reference": "6f970ab081a1638142da5f99d0f0dbb1de70aff0"
+                "reference": "e6345a28cbe7a09f17648782ddda8e115453441e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-backup/zipball/6f970ab081a1638142da5f99d0f0dbb1de70aff0",
-                "reference": "6f970ab081a1638142da5f99d0f0dbb1de70aff0",
+                "url": "https://api.github.com/repos/spatie/laravel-backup/zipball/e6345a28cbe7a09f17648782ddda8e115453441e",
+                "reference": "e6345a28cbe7a09f17648782ddda8e115453441e",
                 "shasum": ""
             },
             "require": {
@@ -1509,7 +1509,7 @@
                 "laravel-backup",
                 "spatie"
             ],
-            "time": "2017-02-17T00:01:13+00:00"
+            "time": "2017-02-17T00:05:17+00:00"
         },
         {
             "name": "spatie/temporary-directory",
@@ -1731,7 +1731,7 @@
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v3.2.3",
+            "version": "v3.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher.git",
